@@ -22,6 +22,17 @@ def eliminar(nombreborrar):
                 print(f"Mascota eliminada {nombre_mascota[i]}")
                 return    
 
+def ordenar():
+    for i in range(len(nombre_mascota)):
+        for j in range(len(nombre_mascota)-1):
+            mascota1 = nombre_mascota[j]
+            mascota2 = nombre_mascota[j+1]
+            if mascota1[0] > mascota2[0]:
+                temporal = nombre_mascota[j]
+                nombre_mascota[j] = nombre_mascota [j+1]
+                nombre_mascota[j+1] = temporal
+    print("Mascota ordenadas")
+
 def main():
     global nombre_mascota, edad_mascota
     nombre_mascota=[""]*3
@@ -44,7 +55,8 @@ def main():
             mascotaborrar = input("Ingrese mascota a borrar: ")
             eliminar(mascotaborrar)
         elif opcion ==4:
-            print("Ordenar")
+            ordenar()
+            mostrar()
         elif opcion == 5:
             print("Saliendo...")
         else: print ("Opción inválida")
